@@ -85,6 +85,7 @@ function Select-CSVFile {
 }
 
 function Show-OpenOrCreateCSVForm {
+    Add-Type -AssemblyName System.Windows.Forms
     $form = New-Object System.Windows.Forms.Form
     $form.Text = "Open or Create CSV"
     $form.Size = New-Object System.Drawing.Size(300, 150)
@@ -135,7 +136,7 @@ function Add-CSVEntry {
         [string]$CsvPath
     )
 
-    Add-Type -AssemblyName System.Windows.Forms
+
     # Prompt for book using a popup dialog
     $bookInputDialog = New-Object System.Windows.Forms.Form
     $bookInputDialog.Text = "Enter Book Number"
